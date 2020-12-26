@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 67 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-505.638,-576.907)">
+        <g id="Lock" transform="matrix(0.155392,0,0,0.154854,410.867,530.572)">
+            <path d="M825.741,720.251C833.938,718.663 840.142,713.061 843.209,707.116L843.209,657.828C868.963,622.084 840.428,600.335 825.645,603.526C810.394,600.975 779.49,617.682 804.513,656.448L804.513,707.299C810.639,715.17 817.73,719.432 825.741,720.251Z" style="fill:rgb(255,0,0);stroke:rgb(255,0,0);stroke-width:25.79px;"/>
+            <rect x="622.755" y="507.12" width="402.877" height="316.279" style="fill:none;stroke:rgb(255,0,0);stroke-width:25.79px;"/>
+            <path d="M950.245,507.12L950.245,400.935C894.004,282.001 752.037,282.958 701.395,401.254" style="fill:none;stroke:rgb(255,0,0);stroke-width:25.79px;"/>
+            <path d="M701.395,507.12L701.395,401.254" style="fill:none;stroke:rgb(255,0,0);stroke-width:25.79px;"/>
+        </g>
+    </g>
+</svg>

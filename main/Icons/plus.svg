@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 105 105" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-204.003,-325.481)">
+        <g id="Plus-icon" serif:id="Plus icon" transform="matrix(1,0,0,1,-3.61055,-0.667249)">
+            <g>
+                <g transform="matrix(1,0,0,1,-0.517319,-0.195682)">
+                    <path d="M260.7,351.534L260.7,406.516" style="fill:none;stroke:rgb(255,0,0);stroke-width:4.5px;"/>
+                </g>
+                <g transform="matrix(6.12323e-17,1,-1,6.12323e-17,639.208,118.129)">
+                    <path d="M260.7,351.534L260.7,406.516" style="fill:none;stroke:rgb(255,0,0);stroke-width:4.5px;"/>
+                </g>
+            </g>
+            <g transform="matrix(1.12992,0,0,1.12992,-43.952,-53.2295)">
+                <circle cx="268.883" cy="382" r="44.251" style="fill:none;stroke:rgb(255,0,0);stroke-width:3.98px;"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,146 @@
+$darkGrey: rgb(22, 22, 24);
+$grey: rgba(75, 83, 88, 1);
+$blue: rgba(119, 150, 203, 1);
+$lightBlue: rgba(216, 228, 255, 1);
+$lightBlueOverlay: rgba(216, 228, 255, 0.322);
+$lightBlueStrong: rgba(216, 228, 255, 1);
+$green: rgba(99, 193, 50, 1);
+$pink: rgba(227, 99, 151, 1);
+$white: rgb(255, 255, 255);
+
+
+#dropdown-arrow:hover {
+    stroke-width: 8;
+    stroke: $pink;
+}
+#dropdown-arrow:focus {
+    stroke-width: 8;
+    stroke: $pink;
+}  
+
+#all-tasks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.dropdown {
+    width: 250px;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .view-tasks {
+        @extend .dropdown;
+        margin-top: 0px;
+        flex-direction: column;
+        width: 250px;
+    }
+    .title-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        position: relative;
+        width: 250px;
+    }
+
+}
+.dropdown-list {
+    cursor: pointer;
+    position: fixed;
+    list-style: none;
+    border-radius: 10px;
+    top: 25%;
+    width: 250px;
+    padding: 0;
+    .dropdown-item {
+        background-color: $lightBlueStrong;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .dropdown-item:hover {
+        cursor: pointer;
+        background-color: $blue;
+    }
+    .dropdown-p {
+        color: $darkGrey;
+    }
+    .dropdown-item-first {
+        @extend .dropdown-item;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .dropdown-item-last {
+        @extend .dropdown-item;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+
+#dropdown-tasks {
+    @extend .dropdown-list;
+    position: static;
+    width: 100%;
+    top: 40px;
+}
+
+.all-tasks-container {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    max-width: 1100px;
+    margin-left: 10%;
+    margin-right: 10%;
+    .column-div {
+        width: 25%;
+        margin-left: 10px;
+        margin-right: 10px;
+        min-width: 150px;
+    }
+    .all-tasks-r1 {
+        display: flex;
+        height: 10%;
+        min-height: 80px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 8px solid;
+        border-bottom-color: $darkGrey;
+        align-items: flex-start;
+        justify-content: flex-start;       
+    }
+    #all-tasks-r1-1 {
+        border-bottom-color: $darkGrey;
+    }
+    #all-tasks-r1-2 {
+        border-bottom-color: $blue;
+    }
+    #all-tasks-r1-3 {
+        border-bottom-color: $pink;
+    }
+    #all-tasks-r1-4 {
+        border-bottom-color: $green;
+    }
+
+    .all-tasks-r2 {
+        height: 80%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+.task-prev {
+    background-color: $grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    height: 40px;
+    margin-bottom: 10px;
+}

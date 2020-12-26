@@ -1,0 +1,146 @@
+{% load static %}
+
+<script src="{% static 'main/js/task.js' %}"></script>
+<script src="{% static 'main/js/all_tasks.js' %}"></script>
+<script src="{% static 'main/js/voting.js' %}"></script>
+<script src="{% static 'main/js/main.js' %}"></script>
+<script src="{% static 'main/js/new-team.js' %}"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{% static '/main/nav.css' %}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@700&display=swap" rel="stylesheet"> 
+    <title>Document</title>
+</head>
+<nav>
+    <div class="nav-container">
+        <div class="nav-bar">
+            <div id="nav-plus" class="nav-icon" tabindex="0">
+                <svg class="nav-svg" width="30px" height="30px" viewBox="0 0 105 105" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+                    <g transform="matrix(1,0,0,1,-204.003,-325.481)">
+                        <g id="Plus-icon" serif:id="Plus icon" transform="matrix(1,0,0,1,-3.61055,-0.667249)">
+                            <g>
+                                <g transform="matrix(1,0,0,1,-0.517319,-0.195682)">
+                                    <path d="M260.7,351.534L260.7,406.516"/>
+                                </g>
+                                <g transform="matrix(6.12323e-17,1,-1,6.12323e-17,639.208,118.129)">
+                                    <path class="nav-svg" d="M260.7,351.534L260.7,406.516"/>
+                                </g>
+                            </g>
+                            <g transform="matrix(1.12992,0,0,1.12992,-43.952,-53.2295)">
+                                <circle class="nav-svg" cx="268.883" cy="382" r="44.251" />
+                            </g>
+                        </g>
+                    </g>
+                    </svg>
+            </div>
+            <div id="nav-hower" class="nav-icon" tabindex="0">
+                <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                <svg class="nav-svg" width="30px" height="30px" viewBox="0 0 105 105" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+                    <g transform="matrix(1,0,0,1,-503.213,-326.706)">
+                        <g id="Hower-map" serif:id="Hower map">
+                            <path class="nav-svg" d="M539.884,400.826L550.585,390.125"/>
+                            <g transform="matrix(1,0,0,-1,0,801.868)">
+                                <path class="nav-svg" d="M539.884,400.826L550.585,390.125"/>
+                            </g>
+                            <g transform="matrix(6.12323e-17,1,-1,6.12323e-17,978.955,-176.9)">
+                                <path class="nav-svg" d="M539.884,400.826L550.585,390.125"/>
+                            </g>
+                            <g transform="matrix(6.12323e-17,1,1,-6.12323e-17,177.087,-176.9)">
+                                <path class="nav-svg" d="M539.884,400.826L550.585,390.125"/>
+                            </g>
+                            <g transform="matrix(1.0619,0,0,1.0619,-32.4756,-23.1276)">
+                                <rect class="nav-svg" x="506.582" y="331.561" width="94.171" height="94.171"/>
+                            </g>
+                            <path class="nav-svg" d="M505.463,352.211L605.463,352.211" />
+                            <path class="nav-svg" d="M577.965,362.984L577.965,400.826L540.324,400.826"/>
+                            <path class="nav-svg" d="M529.405,328.956L529.405,428.956"/>
+                        </g>
+                    </g>
+                </svg>
+
+            </div>
+            <div id="voting" class="nav-icon" tabindex="0">
+                <svg class="nav-svg" width="30px" height="30px" viewBox="0 0 104 104" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
+                    <g transform="matrix(1,0,0,1,-862.391,-321.602)">
+                        <g id="Vote" transform="matrix(0.962246,0,0,0.924942,280.893,24.0896)">
+                            <g transform="matrix(1,0,0,1,-242.452,-10.3798)">
+                                <g transform="matrix(1,0,0,1,-4.2519,-0.942974)">
+                                    <circle class="nav-svg" cx="904.87" cy="342.05" r="6.909"/>
+                                </g>
+                                <g transform="matrix(0.426973,0,0,1,486.191,-0.588952)">
+                                    <path class="nav-svg" d="M849.357,341.696L952.539,341.696"/>
+                                </g>
+                                <g transform="matrix(0.426973,0,0,1,546.059,-0.588952)">
+                                    <path class="nav-svg" d="M849.357,341.696L952.539,341.696"/>
+                                </g>
+                            </g>
+                            <g transform="matrix(1,0,0,1,-242.452,3.69935)">
+                                <g transform="matrix(1,0,0,1,27.8642,32.1262)">
+                                    <circle class="nav-svg" cx="904.87" cy="342.05" r="6.909"/>
+                                </g>
+                                <g transform="matrix(0.730153,0,0,1.71007,228.683,-210.147)">
+                                    <path class="nav-svg" d="M849.357,341.696L952.539,341.696"/>
+                                </g>
+                                <g transform="matrix(0.101783,0,0,0.238384,855.814,292.721)">
+                                    <path class="nav-svg" d="M849.357,341.696L952.539,341.696"/>
+                                </g>
+                            </g>
+                            <g transform="matrix(1,0,0,1,-242.452,18.0987)">
+                                <g transform="matrix(1,0,0,1,-29.4764,64.8752)">
+                                    <circle class="nav-svg" cx="904.87" cy="342.05" r="6.909"/>
+                                </g>
+                                <g transform="matrix(0.176763,0,0,0.413991,698.709,265.541)">
+                                    <path class="nav-svg" d="M849.357,341.696L952.539,341.696"/>
+                                </g>
+                                <g transform="matrix(0.664469,0,0,1.55623,319.834,-124.758)">
+                                    <path class="nav-svg" d="M849.357,341.696L952.539,341.696"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+
+            </div>
+            <div id="team" class="nav-icon" tabindex="0">
+                <svg class="nav-svg" width="30px" height="30px" viewBox="0 0 109 106" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+                    <g transform="matrix(1,0,0,1,-1197.59,-309.556)">
+                        <g id="Team">
+                            <path class="nav-svg" d="M1245.03,349.42L1258.36,349.42"/>
+                            <path class="nav-svg" d="M1252.18,311.806C1230.86,312.365 1231.55,331.044 1244.43,349.25L1244.43,356.255L1251.25,362.642"/>
+                            <g transform="matrix(-1,0,0,1,2502.92,0)">
+                                <path class="nav-svg" d="M1252.18,311.806C1230.86,312.365 1231.55,331.044 1244.43,349.25L1244.43,356.255L1250.81,362.642"/>
+                            </g>
+                            <g transform="matrix(0.962621,0,0,1,44.8488,0)">
+                                <path class="nav-svg" d="M1199.84,412.339L1306.84,412.339"/>
+                            </g>
+                            <g transform="matrix(0.884859,0,0,0.968704,146.517,12.9043)">
+                                <path class="nav-svg" d="M1306.84,412.339C1310.58,410.067 1295.71,397.821 1286.91,397.543C1284.82,397.477 1284.27,392.819 1285.79,391.385C1298.13,379.706 1296.37,362.612 1279.79,360.441"/>
+                            </g>
+                            <g transform="matrix(-0.884859,0,0,0.968704,2410.57,12.9043)">
+                                <path class="nav-svg" d="M1306.84,412.339C1310.58,410.067 1295.71,397.821 1286.91,397.543C1284.82,397.477 1284.27,392.819 1285.79,391.385C1298.13,379.706 1295.45,362.612 1278.86,360.441"/>
+                            </g>
+                            <g transform="matrix(0.884859,0,0,0.968704,92.8823,12.9043)">
+                                <path class="nav-svg" d="M1306.84,412.339C1310.58,410.067 1295.71,397.821 1286.91,397.543C1284.82,397.477 1284.27,392.819 1285.79,391.385C1298.13,379.706 1296.37,362.612 1279.79,360.441"/>
+                            </g>
+                            <g transform="matrix(-0.884859,0,0,0.968704,2356.93,12.9043)">
+                                <path class="nav-svg" d="M1306.84,412.339C1310.58,410.067 1295.71,397.821 1286.91,397.543C1284.82,397.477 1284.27,392.819 1285.79,391.385C1298.13,379.706 1295.45,362.612 1278.86,360.441"/>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+</nav>
+<body>
+    {% block body %}
+    {% endblock %}    
+</body>
+</html>

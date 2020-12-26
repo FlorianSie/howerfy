@@ -1,0 +1,44 @@
+{% extends "main/layout.html" %}
+
+{% block body %}
+
+<div id="overlay" style="display: none;"></div>
+
+<div id="dropdown-view" style="display: none;">
+    <div class="dropdown">
+        <div class="view-tasks">
+            <div class="title-container">
+                 <h2 class="dropdown-title">All see tasks</h2>
+                 <svg class="nav-svg-tasks" width="30px" height="30px" viewBox="0 0 105 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+                     <g transform="matrix(1,0,0,1,-710.469,-612.906)">
+                         <g transform="matrix(0.987208,0,0,0.725547,212.944,377.05)">
+                             <path id="dropdown-arrow" class="nav-svg" d="M506.251,328.175L557.725,374.113L607.547,328.932"/>
+                         </g>
+                     </g>
+                 </svg>
+            </div>
+            
+            <ul class="dropdown-list" style="display: none;" >
+                <li onclick="dropdown('dropdown-item-1')" id="dropdown-item-1" class="dropdown-item-first"><p class="dropdown-p">All Tasks</p></li>
+                <li onclick="dropdown('dropdown-item-2')" id="dropdown-item-2" class="dropdown-item"><p class="dropdown-p">All Open Tasks</p></li>
+                <li onclick="dropdown('dropdown-item-3')" id="dropdown-item-3" class="dropdown-item"><p class="dropdown-p">All Closed Tasks</p></li>
+                <li onclick="dropdown('dropdown-item-4')" id="dropdown-item-4" class="dropdown-item-last"><p class="dropdown-p">See More Teams</p></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="all-tasks"></div>
+
+<div id="team-overview"></div>
+
+<div id="new-team"></div>
+
+<div id="task"></div>
+
+<div id="voting-view"></div>
+
+
+{% endblock %}
+
+{% load static %}
