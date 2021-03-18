@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 110 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-477.277,-118.972)">
+        <g>
+            <g id="Hower-map" serif:id="Hower map" transform="matrix(0.581762,0,0,0.581762,209.024,-46.5957)">
+                <g transform="matrix(1.34594,0,0,1.34594,-192.372,116.995)">
+                    <text x="545.595px" y="222.241px" style="font-family:'Helvetica-Bold', 'Helvetica';font-weight:700;font-size:52.465px;fill:rgb(119,150,203);">H</text>
+                </g>
+                <path d="M505.463,352.211L605.463,352.211" style="fill:none;stroke:rgb(76,83,87);stroke-width:6.88px;"/>
+                <path d="M529.405,328.956L529.405,428.956" style="fill:none;stroke:rgb(76,83,87);stroke-width:6.88px;"/>
+                <g transform="matrix(1.0619,0,0,1.0619,-32.4756,-23.1276)">
+                    <rect x="506.582" y="331.561" width="94.171" height="94.171" style="fill:none;stroke:rgb(38,39,43);stroke-width:6.47px;"/>
+                </g>
+            </g>
+            <circle cx="532.171" cy="173.866" r="52.894" style="fill:none;stroke:rgb(76,83,87);stroke-width:4px;"/>
+        </g>
+    </g>
+</svg>

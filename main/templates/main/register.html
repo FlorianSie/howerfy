@@ -1,0 +1,22 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<div id="overlay" style="display: block;">
+    <form class="register-form" action="/register_new" method="post">
+        {% csrf_token %}
+        <div class="auth-button-container">
+
+            <input class="user-login-field" placeholder="eMail" name="eMail" autocomplete="false">
+            <input class="user-login-field" placeholder="Username" name="username" autocomplete="false">
+            <input class="user-login-field" type="password" name="password" placeholder="Password" autocomplete="false">
+            
+            <button class="sign-in-button" type="submit">Register</button>
+        </div>        
+    </form>
+</div>
+
+<div class="spacer"></div>
+
+{% endblock %}

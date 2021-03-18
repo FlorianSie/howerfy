@@ -1,24 +1,40 @@
 $darkGrey: rgb(22, 22, 24);
 $grey: rgba(75, 83, 88, 1);
+$greyInactive: rgba(75, 83, 88, 0.2);
+$lightGrey: rgba(122, 129, 140, 1);
 $blue: rgba(119, 150, 203, 1);
 $lightBlue: rgba(216, 228, 255, 1);
 $lightBlueOverlay: rgba(216, 228, 255, 0.322);
 $green: rgba(99, 193, 50, 1);
 $pink: rgba(227, 99, 151, 1);
 $white: rgb(255, 255, 255);
+$whiteInactive: rgba(255, 255, 255, 0.5);
 
 body {
-    height: 100%;
     display: flex;
+    min-height: 100vh;
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: none;
 }
+
 
 h3, p {
     font-family: 'Hind Vadodara', sans-serif;
     color: $white;
     margin: 0;
     font-weight: 400;
+    font-size: 1rem;
+}
+
+small, a {
+    font-family: 'Hind Vadodara', sans-serif;
+    color: $white;
+    margin: 0;
+    font-weight: 400;
+    font-size: 0.9rem;  
 }
 
 h2 {
@@ -26,8 +42,8 @@ h2 {
     font-weight: 700;
     color: $darkGrey;
     margin: 0;
+    font-size: 1.5rem;
 }
-
 #overlay {
     z-index: 10;
     position: fixed;
@@ -144,6 +160,16 @@ h2 {
         }
     }
 
+.not-own-task {
+    .task-nav-icon-plain, .task-nav-icon {
+        cursor: pointer;
+        pointer-events: none;
+    }
+    path, rect, circle {
+        stroke: $lightGrey;
+    }
+}
+// used to display disabled functionalities when task is rendered
 .task-nav-icon-plain {
     margin-bottom: 0;
     margin-top: 0;
@@ -159,8 +185,30 @@ h2 {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     outline: none;
-    cursor: pointer;
+    svg {
+        pointer-events: none;
     }
+}
+.task-nav-icon-active-mobile {
+    margin-bottom: 0;
+    margin-top: 0;
+    height: 50px;
+    width: 50px;
+    background-color: none;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    border-bottom: 0px solid;
+    border-bottom-color: $grey;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    outline: none;
+    path, rect {
+        stroke: $green;
+    }
+
+}
 
     .container-right {
         width: 200px;
@@ -174,7 +222,7 @@ h2 {
             padding-left: 20px;
             padding-right: 20px;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-around;
             align-items: center;
         }
 
@@ -182,6 +230,7 @@ h2 {
             @extend .row-1-right;
             flex-direction: column;
             justify-content: flex-start;
+            height: 50%;
         
             .li-wrap {
                 width: 100%;
@@ -202,8 +251,18 @@ h2 {
                      align-content: center;
                  }   
         }
+        .row-3-right {
+            @extend .row-1-right;
+            height: 50px;
+            justify-content: flex-end;
+            
+        }
     }
 }
+.milestone-circle {
+    cursor: pointer;
+}
+
 
 #task-details {
     height: 150px;
@@ -213,7 +272,19 @@ h2 {
     margin-left: auto;
     margin-right: auto;
 }
+
+.placeholder-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+}
+
+
 .container-sliders {
+    box-sizing: border-box;
+    margin-top: 10px;
     width: 100%;
     height: 50%;
     background-color: none;
@@ -238,8 +309,9 @@ h2 {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
-    width: 10px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
+    border-radius: 12px;
+    width: 12px; /* Set a specific slider handle width */
+    height: 12px; /* Slider handle height */
     background: $pink; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
@@ -292,6 +364,266 @@ h2 {
 .task-nav-svg-container {
     cursor: pointer;
 }
-        
+
+.div-description {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 1em;
+    height: 100%;
+}
+.description {
+    resize: none;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: 'Hind Vadodara', sans-serif;
+    color: $white;
+    width: 100%;
+    height: 100%;
+    min-height: 1em;
+    text-align: justify;
+    text-justify: auto;
+    max-height: 80%;
+    outline: none;
+    padding: 5px;
+    white-space: pre-wrap;
+    overflow: scroll;
+    text-overflow: ellipsis;
+    background: none;
+    border: none;
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        cursor: text;
+        border-radius: 10px;
+        background-color: $lightGrey;      
+    }
+}
+
+#title-text {
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 90px;
+    outline: none;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        cursor: text;
+        border-radius: 10px;
+        background-color: $lightGrey;      
+    }  
+
+}
+
+.date-picker {
+    width: 130px;
+    cursor: pointer;
+    background: transparent;
+    font: $darkGrey;
+    color: $white;
+    outline: none;
+    border: none;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: 'Hind Vadodara', sans-serif;
+    &:focus {
+        border-radius: 10px;
+        background-color: $lightGrey;      
+    }  
+}
+
+.title-input {
+    background: none;
+    border: none;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: 'Hind Vadodara', sans-serif;
+    width: 60px;
+    color: $white;
+}
+::placeholder {
+    color: $darkGrey;
+}
+.save-button-active {
+    margin-top: 20px;
+    width: 125px;
+    height: 40px;
+    border-radius: 25px;
+    background: $grey;
+    border: none;
+    outline: none;     
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: 'Hind Vadodara', sans-serif;
+    &:hover {
+        cursor: pointer;
+        background: $blue;
+    }    
+}
+.save-button {
+    margin-top: 20px;
+    width: 125px;
+    height: 40px;
+    border-radius: 25px;
+    background: $greyInactive;
+    border: none;
+    outline: none;     
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: 'Hind Vadodara', sans-serif;
+    color: $whiteInactive;
+}
+
+.milestone-input {
+    color: $white;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: 'Hind Vadodara', sans-serif;
+    background: none;
+    border: none;
+    width: 100%;
+    height: 1.5rem;
+    min-height: 26px;
+    padding-right: 5px;
+    padding-left: 5px;
+    outline: none;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        cursor: text;
+        border-radius: 10px;
+        background-color: $lightBlue;
+        color: $darkGrey;     
+    }  
+    
+}
+
+.ul-milestones {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+@media only screen and (max-width: 736px) {
+    .task-container {
+        display: flex;
+        flex-direction: column;
+        width: 90vw !important;
+        min-width: 90vw !important;
+        max-width: 90vw !important;
+        height: 50vh;
+        background: none;
+        border-radius: 30px;
+        margin: 0px !important;
+    }
+    .container-left {
+        width: 100% !important;
+        max-width: 100%;
+        height: 100%;
+        background-color: $grey;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        display: flex ;
+        flex-direction: column;
+        background-color: transparent;
+    }
+    .row-1 {
+        width: 80vw !important;
+        max-width: 80vw !important;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        background-color: transparent;
+        margin: 0 !important;
+    }
+    .row-2 {
+        width: 80vw !important;
+        max-width: 80vw !important;
+        border-radius: 0px !important;
+    }
+    .row-3 {
+        width: 100% !important;
+        max-width: 80vw !important;
+        border-top-right-radius: 0px !important;
+        border-top-left-radius: 0px !important;
+        border-bottom-right-radius: 30px !important;
+        border-bottom-left-radius: 30px !important;
+        flex-direction: row !important;
+        background-color: $grey !important;
+    }
+    .div-title {
+        width: 80vw !important;
+        max-width: 80vw !important;
+        border-radius: 0px !important;
+        flex-direction: row !important;
+        height: 40px !important;
+    }
+    .div-description {
+        height: 80px;
+    }
+    .task-box {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start !important;
+        flex-direction: column;
+    }
+    #task {
+        height: 100vh;
+        width: 100vw;
+        top: 70px;
+        left: 0%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: none;
+        z-index: 13;
+        pointer-events: none;
+    }
+    .container-right {
+        width: 100% !important;
+        height: 200px;
+        background-color: $blue;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        .row-1-right, .row-2-right {
+            width: 80vw !important;
+            max-width: 80vw !important;
+            margin-right: 0px !important;
+        }
+        .row-2-right {
+            align-items: flex-start !important;
+        }
+    }
+    .save-button {
+        margin-top: 20px !important;
+    }
+    .placeholder-container {
+        margin-top: 0px;
+    }
+    #close-task {
+        margin-bottom: 20px !important;
+        display: flex;
+        align-items: flex-end;
+        max-width: 80vw !important;
+        padding-right: 20px;
+    }
+}
+
+
+
+::-webkit-calendar-picker-indicator { cursor: pointer;}
+::-webkit-datetime-edit-month-field { text-transform: uppercase; }
+::-webkit-datetime-edit-day-field { text-transform: uppercase; }
+::-webkit-datetime-edit-year-field { text-transform: uppercase; }
+
+
 
 
