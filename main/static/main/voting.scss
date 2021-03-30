@@ -1,30 +1,78 @@
+@media only screen and (max-width: 736px) {
+    .container-sliders {
+    box-sizing: border-box;
+    margin-top: 10px;
+    width: 100%;
+    height: 10%;
+    background-color: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2 {
+        font-size: 1.2rem;
+        min-width: 80px;
+    }
+    }
+    .container-sliders-inactive {
+        box-sizing: border-box;
+        margin-top: 10px;
+        width: 100%;
+        height: 10%;
+        background-color: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h2 {
+            color: $greyInactive;
+            font-size: 1.2rem;
+            min-width: 80px;
+        }
+        .slider {
+            -webkit-appearance: none;
+            height: 10px;
+            appearance: none;
+            width: 100%;
+            height: 3px;
+            background: $greyInactive;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            border-radius: 12px;
+            width: 12px;
+            height: 12px;
+            background: $greyInactive;
+            cursor: pointer;
+        }
+        
+    }
+    
+}
+
 #voting-view {
     margin-top: 10%;
+    box-shadow: 4px 4px 9px #777;
+    border-radius: 25px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
+    min-height: 70%;
     width: 80%;
+    min-width: 1000px;
     padding-right: 5%;
     padding-left: 5%;
 }
 .voting-container {
     height: 100%;
     width: 45%;
-}
-.task-prev {
-    background-color: $grey;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 25px;
-    height: 40px;
-    margin-bottom: 10px;
-    width: 100%;
-    min-width: 190px;
-    max-width: 260px;
 }
 .voting-separator {
     @extend .voting-container;
@@ -35,6 +83,11 @@
 #voting-container-left {
     @extend .voting-container;
     width: 30%;
+    padding-right: 20px;
+    max-height: 80vh;
+    overflow: scroll;
+    
+
 }
 #voting-container-right {
     @extend .voting-container;
@@ -51,6 +104,8 @@
 }
 
 .task-prev-hover {
+    width: 100%;
+    z-index: 11;
     background-color: $grey;
     display: flex;
     align-items: center;
@@ -58,11 +113,109 @@
     border-radius: 25px;
     height: 40px;
     margin-bottom: 10px;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s linear;
     &:hover {
         background-color: $blue;
         cursor: pointer;
     }
+    svg {
+        left: 10px;
+        pointer-events: none;
+    }
+    #task-prev-title {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 80px;
+        pointer-events: none;
+    }
+    #task-prev-progress {
+        right: 10px;
+        pointer-events: none;
+    }
 }
+.task-prev {
+    z-index: 11;
+    background-color: $grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    height: 40px;
+    margin-bottom: 10px;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s linear;
+    svg {
+        left: 10px;
+        pointer-events: none;
+    }
+    #task-prev-title {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 80px;
+        pointer-events: none;
+    }
+    #task-prev-progress {
+        right: 10px;
+        pointer-events: none;
+    }
+}
+
+.task-prev-select {
+    z-index: 11;
+    background-color: $blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    height: 40px;
+    margin-bottom: 10px;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s linear;
+    &:hover {
+        background-color: $blue;
+        cursor: pointer;
+    }
+    svg {
+        left: 10px;
+        pointer-events: none;
+    }
+    #task-prev-title {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 80px;
+        pointer-events: none;
+    }
+    #task-prev-progress {
+        right: 10px;
+        pointer-events: none;
+    }
+
+}
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s linear;
+}
+.faded {
+    opacity: 0.4;
+}
+
 
 #voting-container-task {
     margin-top: 50px;
@@ -84,5 +237,26 @@
     width: 50px;
     background-color: brown;
 
+}
+.avatar-box-team {
+    @extend .avatar-box;
+}
+
+@media only screen and (max-width: 414px) {
+    #voting-view {
+        width: 90vw;
+        min-width: 90vw;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+   .voting-container {
+       width: 70%;
+       padding: 0;
+       height: auto;
+   }
+   .voting-separator {
+       display: none;
+   }
 }
 

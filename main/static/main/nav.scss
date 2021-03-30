@@ -2,36 +2,99 @@
 @import 'all_tasks';
 @import 'voting';
 @import 'new-team';
+@import 'user-search';
+@import 'team-overview';
+@import 'authentification';
 
 $darkGrey: rgb(22, 22, 24);
 $grey: rgba(75, 83, 88, 1);
+$lightGrey: rgba(122, 129, 140, 1);
 $blue: rgba(119, 150, 203, 1);
 $lightBlue: rgba(216, 228, 255, 1);
 $lightBlueOverlay: rgba(216, 228, 255, 0.322);
 $lightBlueStrong: rgba(216, 228, 255, 1);
 $green: rgba(99, 193, 50, 1);
+$lightGreen: rgba(99, 193, 50, 0.5);
 $pink: rgba(227, 99, 151, 1);
 $white: rgb(255, 255, 255);
 
-.nav-container {
-    width: 100%;
+.nav-wrap {
     height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100vw;
+    display: block;
 
-    .nav-bar {
-        margin-top: 20px;
-        padding: 0px;
-        width: 350px;
+    @media only screen and (max-width: 736px) {
+        #nav-login-header {
+            display: none;
+        }
+    }
+
+    .nav-login {
+        position: relative;
+        width: 100px;
         height: 50px;
-        border-radius: 25px;
-        background-color: $grey;
+        margin-top: 20px;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        min-width: 312px;
+        align-items: center;
+        p {
+            color: $grey;
+            cursor: pointer;
+        }
+        @media only screen and (max-width: 736px) {
+            p {
+                display: none;
+            }
+        }
+        svg {
+            cursor: pointer;
+        }
     }
+
+    .nav-container {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+
+        .nav-bar {
+            position: relative;
+            margin-top: 20px;
+            padding: 0px;
+            width: 400px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: $grey;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            min-width: 312px;
+
+            @media only screen and (max-width: 640px) {
+                width: 90vw;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+
+    }
+}
+
+.logo {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        cursor: pointer;
+        circle, path, rect {
+            stroke: $pink !important;
+        }
+    }
+
 }
 
 .nav-icon {
@@ -57,9 +120,7 @@ $white: rgb(255, 255, 255);
         border-color: $pink;
         background-color: $lightBlueOverlay;
     }
-
 }
-
 .nav-svg {
     position: relative;
     top: 10px;
@@ -68,4 +129,36 @@ $white: rgb(255, 255, 255);
     stroke-width:5px;
     stroke: $darkGrey;
     stroke-width: 4;
+}
+.footer {
+    margin-top: 50px;
+    z-index: 11;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 50px;
+    background-color: $grey;
+    .footer-login {
+        padding-right: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        p {
+            padding-right: 10px;
+        }
+    }
+}
+@media only screen and (max-width: 736px) {
+    #nav-login-footer {
+        display: block !important;
+        z-index: 15;
+    }
+    .logo {
+        display: none;
+    }
 }

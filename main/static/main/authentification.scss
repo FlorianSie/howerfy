@@ -1,0 +1,238 @@
+$darkGrey: rgb(22, 22, 24);
+$grey: rgba(75, 83, 88, 1);
+$lightGrey: rgba(122, 129, 140, 1);
+$blue: rgba(119, 150, 203, 1);
+$lightBlue: rgba(216, 228, 255, 1);
+$lightBlueOverlay: rgba(216, 228, 255, 0.322);
+$lightBlueStrong: rgba(216, 228, 255, 1);
+$green: rgba(99, 193, 50, 1);
+$lightGreen: rgba(99, 193, 50, 0.5);
+$pink: rgba(227, 99, 151, 1);
+$white: rgb(255, 255, 255);
+
+.sign-in-form, .register-form {
+    background-color: $grey;
+    width: 400px;
+    border-radius: 25px;
+    margin: auto;
+    margin-top: 20%;
+
+    @media only screen and (max-width: 640px) {
+        width: 80vw;
+    }
+}
+
+
+.auth-button-container {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    flex-direction: column;
+    a {
+        margin-bottom: 20px;
+        cursor: pointer;
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}
+
+
+
+.message-login {
+    margin-top: 20px;
+    color: $pink;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.sign-in-button {
+    margin-bottom: 20px;
+    @extend .save-button-active;
+    background-color: $blue;
+    color: $white;
+    cursor: pointer;
+    &:hover {
+        background-color: $lightBlueStrong;
+        cursor: pointer;
+        color: $darkGrey;
+    }
+}
+
+.user-login-field {
+    margin-top: 20px;
+    height: 1.5rem;
+    background-color: $grey;
+    border: none;
+    border-bottom: solid 2px $lightGrey;
+    outline: none;
+    color: $white;
+    &:focus {
+        border-bottom: solid 2px $blue; 
+    }
+}
+
+ellipse:hover {
+    fill: $pink !important;
+}
+
+.overlay-welcome {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2.5px);
+}
+
+// Home
+@media only screen and (max-width: 736px) {
+    #welcome {
+        z-index: 11;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-top: 10%;
+        max-width: 80vw;
+        min-width: 80vw;
+        height: auto;
+        border-radius: 25px;
+        box-shadow: 4px 4px 9px #777;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        p {
+            color: $darkGrey;
+            max-width: 80vw !important;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: $darkGrey;
+        }
+        svg {
+            padding-right: 20px;
+        }
+    }
+
+.welcome-column {
+    box-sizing: border-box;
+    padding-top: 30px;
+    max-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-welcome {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.last-column-welcome {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between !important;
+    button {
+        background-color: $blue;
+        color: $white;
+    }
+}
+
+.launch-app-button {
+    background-color: $green;
+    color: $white;
+}
+.welcome-text-p {
+    padding-top: 0px;
+}
+.intro-text {
+    padding-top: 0px;
+}
+}
+
+// Desktop
+
+#welcome {
+    z-index: 11;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 10%;
+    max-width: 80vw;
+    min-width: 80vw;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 4px 4px 9px #777;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    p {
+        color: $darkGrey;
+        max-width: 60vw;
+ 
+    }
+    h2 {
+        margin-bottom: 20px;
+        color: $darkGrey;
+    }
+    svg {
+        padding-right: 20px;
+    }
+}
+
+.welcome-column {
+box-sizing: border-box;
+padding-top: 30px;
+max-width: 80vw;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.center-welcome {
+flex-direction: row !important;
+justify-content: space-between !important;
+align-items: center !important;
+}
+
+.last-column-welcome {
+align-items: center;
+flex-direction: row;
+justify-content: space-between !important;
+button {
+    background-color: $blue;
+    color: $white;
+    &:hover {
+        cursor: pointer;
+        background-color: $pink;
+    }
+}
+}
+
+.launch-app-button {
+background-color: $green;
+color: $white;
+&:hover {
+    cursor: pointer;
+    background-color: $blue;
+}
+}
+.welcome-text-p {
+padding-top: 0px;
+}
+.intro-text {
+padding-top: 0px;
+}
+.spacer {
+    height: 100vh;
+    z-index: 11;
+}
+
+

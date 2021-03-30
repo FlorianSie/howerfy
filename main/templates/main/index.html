@@ -1,8 +1,21 @@
 {% extends "main/layout.html" %}
+{% load static %}
 
 {% block body %}
 
+{% if user.is_authenticated %}
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if messages.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
 <div id="overlay" style="display: none;"></div>
+
+<div id="start" style="display: block"></div>
 
 <div id="dropdown-view" style="display: none;">
     <div class="dropdown">
@@ -19,26 +32,128 @@
             </div>
             
             <ul class="dropdown-list" style="display: none;" >
-                <li onclick="dropdown('dropdown-item-1')" id="dropdown-item-1" class="dropdown-item-first"><p class="dropdown-p">All Tasks</p></li>
-                <li onclick="dropdown('dropdown-item-2')" id="dropdown-item-2" class="dropdown-item"><p class="dropdown-p">All Open Tasks</p></li>
-                <li onclick="dropdown('dropdown-item-3')" id="dropdown-item-3" class="dropdown-item"><p class="dropdown-p">All Closed Tasks</p></li>
-                <li onclick="dropdown('dropdown-item-4')" id="dropdown-item-4" class="dropdown-item-last"><p class="dropdown-p">See More Teams</p></li>
+                <li onclick="dropdown('dropdown-item-1')" data-req="all-tasks"id="dropdown-item-1" class="dropdown-item-first"><p class="dropdown-p">All Tasks</p></li>
+                <li onclick="dropdown('dropdown-item-2')" data-req="all-open-tasks" id="dropdown-item-2" class="dropdown-item"><p class="dropdown-p">All Open Tasks</p></li>
+                <li onclick="dropdown('dropdown-item-3')" data-req="all-closed-tasks"id="dropdown-item-3" class="dropdown-item"><p class="dropdown-p">All Closed Tasks</p></li>
+                <li onclick="team_select('all-tasks')" id="dropdown-item-4" class="dropdown-item-last"><p class="dropdown-p">See Teams</p></li>
             </ul>
         </div>
     </div>
 </div>
 
-<div id="all-tasks"></div>
+<div class="user-search-container" style="display: none">
+    <div id="close-task-search">
+        <svg onclick="close_task('search')" id="close-icon-svg-search" width="30px" height="30px" viewBox="0 0 102 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" class="nav-svg">
+        <g transform="matrix(1,0,0,1,-954.38,-578.283)">
+            <g id="close" transform="matrix(1,0,0,1,301.398,248.529)">
+                <g transform="matrix(1,0,0,1,147.847,1.16359)">
+                    <path clas="nav-svg" d="M507.384,428.209L604.753,330.84"></path>
+                </g>
+                <g transform="matrix(-1,0,0,1,1259.98,1.16359)">
+                    <path class="nav-svg" d="M507.384,428.209L604.753,330.84"></path>
+                </g>
+            </g>
+        </g>
+    </svg>
+    </div>
+    <div id="user-search" >        
+        <input type="text" id="search" class="search-input" placeholder="Username..." autocomplete="off">
+        <div class="search-suggestions" id="suggestions"></div>
+    </div>
+    </div>
+</div>
 
-<div id="team-overview"></div>
+<div class="team-select" style="display: none">
+    <div class="close-div">
+        <svg onclick="close_task('team')" id="close-icon-svg-search" width="30px" height="30px" viewBox="0 0 102 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" class="nav-svg">
+            <g transform="matrix(1,0,0,1,-954.38,-578.283)">
+                <g id="close" transform="matrix(1,0,0,1,301.398,248.529)">
+                    <g transform="matrix(1,0,0,1,147.847,1.16359)">
+                        <path clas="nav-svg" d="M507.384,428.209L604.753,330.84"></path>
+                    </g>
+                    <g transform="matrix(-1,0,0,1,1259.98,1.16359)">
+                        <path class="nav-svg" d="M507.384,428.209L604.753,330.84"></path>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </div>
+    <div class="list" id="team-list"></div>
+</div>
 
-<div id="new-team"></div>
+<div id="all-tasks" style="display: none"></div>
+
+<div id="new-team" style="display: none">
+    <div class="new-team-messages" style="display: none">
+        <p id="new-team-message"></p>
+    </div>
+</div>
 
 <div id="task"></div>
 
-<div id="voting-view"></div>
+<div id="voting-view" style="display: none"></div>
+
+<div id="team-overview" style="display: none">
+    <div class="team-overview-section-1">
+        <div class="team-overview-left" id="team-overview-left">
+            <div class="team-overview-text-container">
+                <input type="text" class="team-overview-title" id="team-overview-title" placeholder="Team Title Goes Here">
+                <textarea type="text" class="team-overview-description" id="team-overview-description">Hi there, this is a sample task. Start aligning tasks and priorities with your team by creating a new one.</textarea>
+            </div>            
+        </div>
+        <div class="team-overview-separator"></div>
+        <div class="team-overview-right" id="team-overview-right">
+            <div class="new-team-people-box" id="team-people-box"></div>
+        </div>
+    </div>
+    <div class="team-overview-section-2">
+        <div class="reporting-container">
+            <div class="reporting-wrap" id="reporting-wrap-1">
+                <h1 class="reporting-figure" id="reporting-figure-1">20</h1>
+                <h2 class="reporting-text" id="reporting-text-1">Open Tasks</h2>
+            </div>
+        </div>
+        <div class="reporting-container">
+            <div class="reporting-wrap" id="reporting-wrap-2">
+                <h1 class="reporting-figure" id="reporting-figure-2">5</h1>
+                <h2 class="reporting-text" id="reporting-text-2">Completed Tasks</h2>
+            </div>
+        </div>
+        <div class="reporting-container">
+            <div class="reporting-wrap" id="reporting-wrap-3">
+                <h1 class="reporting-figure" id="reporting-figure-3">15</h1>
+                <h2 class="reporting-text" id="reporting-text-3">Focus Tasks</h2>
+            </div>
+        </div>
+    </div>    
+    <div class="team-overview-section-3" id="team-overview-section-3"></div>
+    </div> 
+</div>
+
+{% else %}
+
+<div id="overlay" style="display: block;">
+    <form class="sign-in-form" action="/login" method="post" _lpchecked="1">
+        {% csrf_token %}        
+        <div class="auth-button-container">
+            {% if messages %}
+                {% for message in messages %}
+                <p class="message-login" {% if messages.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+            <input class="user-login-field" placeholder="Username" name="username" autocomplete="off">
+            <input class="user-login-field" type="password" name="password" placeholder="Password" autocomplete="off">
+            <button class="sign-in-button" type="submit">Login</button>
+            <a href="/register">No account yet? Register here.</a>
+        </div>        
+    </form>
+</div>
+
+<div class="spacer"></div>
+
+{% endif %}
+
+
 
 
 {% endblock %}
-
-{% load static %}
