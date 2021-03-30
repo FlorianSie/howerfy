@@ -190,7 +190,7 @@ def update_task(request, id_get, spec):
 def show_tasks(request, filter):
 
     if filter == "all-tasks":
-        data = Task.objects.filter(Q(user=request.user)) #| Task.objects.filter(Q(to_team__members=request.user))
+        data = Task.objects.filter(Q(user=request.user)) | Task.objects.filter(Q(to_team__members=request.user))
         data = data.distinct()
         data_serialized = TaskSerializer(data, many=True)
         response = JSONRenderer().render(data_serialized.data)
