@@ -12,7 +12,7 @@ class TeamAdmin(admin.ModelAdmin):
     list_display = ("id", "created", "created_by", "name", "description")
 
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ("id", "to_team", "completed", "user", "created", "title", "progress", "deadline", "description", "importance", "urgency", "to_team", "to_team_member")
+    list_display = ("id", "to_team", "completed", "user", "created", "title", "progress", "deadline", "description", "importance", "urgency", "to_team")
 
 class RatingAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "importance", "urgency")

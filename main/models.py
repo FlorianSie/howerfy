@@ -50,7 +50,7 @@ class Task(models.Model):
     urgency = models.IntegerField(default=50, null=True)
 
     to_team = models.ForeignKey(Team, on_delete=models.DO_NOTHING, related_name='tasks', null=True)
-    to_team_member = models.ForeignKey(Team, on_delete=models.DO_NOTHING, related_name='team_member', null=True)
+    #to_team_member = models.ForeignKey(Team, on_delete=models.DO_NOTHING, related_name='team_member', null=True)
 
     visibility = models.ForeignKey(VisibilitySetting, on_delete=models.DO_NOTHING, related_name='task_visibility', null=True)
     editable = models.ForeignKey(VisibilitySetting, on_delete=models.DO_NOTHING, related_name='task_editability', null=True)
