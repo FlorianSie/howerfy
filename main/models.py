@@ -19,7 +19,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id', 'username']
 
 class VisibilitySetting(models.Model):
-    setting = models.CharField(max_length=30, blank=True)
+    setting = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
         return self.setting
