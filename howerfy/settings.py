@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'qpt+sj-&7$hq8+c=ne0j39%(*$gl@38t#4s+f%%g)0@&4$vrjs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.2.133', '0.0.0.0']
+ALLOWED_HOSTS = ['192.168.2.133', '0.0.0.0', 'howerfy.herokuapp.com/']
 
 
 # Application definition
