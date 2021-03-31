@@ -448,12 +448,11 @@ function render_new_task(view) {
                 title_text.setAttribute('oninput', 'enable_save()');
                 document.querySelector('.div-title').appendChild(title_text);
                 title_text = document.querySelector('#title-text');
-                
-                title_text.innerText = title_get;
 
                 // task date
                 date_text = document.createElement('input');
-                date_text.setAttribute('class', 'date-picker');
+                date_text.setAttribute('class', 'date-picker')
+                date_text.setAttribute('placeholder', 'yyyy-mm-dd');
                 date_text.setAttribute('type', 'date');
                 date_text.setAttribute('id', 'date-text');
                 date_text.setAttribute('oninput', 'enable_save()');
