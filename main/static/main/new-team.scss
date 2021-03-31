@@ -21,16 +21,14 @@ $inactiveGrey: rgba(75, 83, 88, 0.2);
         margin-top: 30px;
     }
     #new-team {
-        height: auto;
+        height: auto !important;
         margin-top: 30px;
     }
-
 }
 
 
 
 #new-team {
-    box-sizing: border-box;
     display: flex;
     flex: row;
     align-items: center;
