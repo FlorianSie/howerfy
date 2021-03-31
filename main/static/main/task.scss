@@ -618,7 +618,7 @@ h2 {
     .date-picker {
         width: 130px;
         cursor: pointer;
-        background: transparent;
+        background: none;
         font: $darkGrey;
         color: $white;
         outline: none;
@@ -635,6 +635,10 @@ h2 {
 
 
 
+::-webkit-calendar-picker-indicator { cursor: pointer;}
+::-webkit-datetime-edit-month-field { text-transform: uppercase; }
+::-webkit-datetime-edit-day-field { text-transform: uppercase; }
+::-webkit-datetime-edit-year-field { text-transform: uppercase; }
 
 
 

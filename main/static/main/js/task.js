@@ -459,8 +459,6 @@ function render_new_task(view) {
                 date_text.setAttribute('oninput', 'enable_save()');
                 document.querySelector('.div-title').appendChild(date_text);
                 date_text = document.querySelector('#date-text');
-                
-                date_text.innerText = date;
 
         // row 2 insinde left div
         row_2 = document.createElement('div');
