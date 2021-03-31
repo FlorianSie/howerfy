@@ -615,14 +615,26 @@ h2 {
         max-width: 80vw !important;
         padding-right: 20px;
     }
+    .date-picker {
+        width: 130px;
+        cursor: pointer;
+        background: transparent;
+        font: $darkGrey;
+        color: $white;
+        outline: none;
+        border: none;
+        font-weight: 400;
+        font-size: 1rem;
+        font-family: 'Hind Vadodara', sans-serif;
+        &:focus {
+            border-radius: 10px;
+            background-color: $lightGrey;      
+        }  
+    }
 }
 
 
 
-::-webkit-calendar-picker-indicator { cursor: pointer;}
-::-webkit-datetime-edit-month-field { text-transform: uppercase; }
-::-webkit-datetime-edit-day-field { text-transform: uppercase; }
-::-webkit-datetime-edit-year-field { text-transform: uppercase; }
 
 
 

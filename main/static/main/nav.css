@@ -601,23 +601,24 @@ h2 {
     max-width: 80vw !important;
     padding-right: 20px;
   }
-}
-::-webkit-calendar-picker-indicator {
-  cursor: pointer;
-}
 
-::-webkit-datetime-edit-month-field {
-  text-transform: uppercase;
+  .date-picker {
+    width: 130px;
+    cursor: pointer;
+    background: transparent;
+    font: #161618;
+    color: white;
+    outline: none;
+    border: none;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: "Hind Vadodara", sans-serif;
+  }
+  .date-picker:focus {
+    border-radius: 10px;
+    background-color: #7a818c;
+  }
 }
-
-::-webkit-datetime-edit-day-field {
-  text-transform: uppercase;
-}
-
-::-webkit-datetime-edit-year-field {
-  text-transform: uppercase;
-}
-
 #dropdown-arrow:hover {
   stroke-width: 8;
   stroke: #e36397;
