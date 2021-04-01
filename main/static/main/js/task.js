@@ -657,9 +657,7 @@ function render_new_task(view) {
         document.querySelector('.row-3').before(container_right)
         // Change to mobile save button function
         document.querySelector('#date-text').innerHTML = 'Add deadline'
-        document.querySelector('#date-text').setAttribute('type', 'text')
-        document.querySelector('#date-text').setAttribute('onclick', "(this.type='date')")
-        //document.querySelector('#date-text').removeAttribute('class', 'date-picker')
+        document.querySelector('#date-text').removeAttribute('class', 'date-picker')
         document.querySelector('#title-text').setAttribute('oninput', 'enable_save_m()')
         document.querySelector('#date-text').setAttribute('oninput', 'enable_save_m()')
         document.querySelector('#task-description').setAttribute('oninput', 'enable_save_m()')
