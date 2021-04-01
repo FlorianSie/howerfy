@@ -452,12 +452,11 @@ function render_new_task(view) {
                 // task date
                 date_text = document.createElement('input');
                 date_text.setAttribute('class', 'date-picker')
-                date_text.setAttribute('placeholder', 'yyyy-mm-dd');
+                date_text.setAttribute('placeholder', 'Add deadline');
                 date_text.setAttribute('type', 'date');
                 date_text.setAttribute('id', 'date-text');
                 date_text.setAttribute('oninput', 'enable_save()');
                 document.querySelector('.div-title').appendChild(date_text);
-                date_text = document.querySelector('#date-text');
 
         // row 2 insinde left div
         row_2 = document.createElement('div');
@@ -660,7 +659,6 @@ function render_new_task(view) {
         document.querySelector('#title-text').setAttribute('oninput', 'enable_save_m()')
         document.querySelector('#date-text').setAttribute('oninput', 'enable_save_m()')
         document.querySelector('#task-description').setAttribute('oninput', 'enable_save_m()')
-        document.querySelector('#date-text').setAttribute('type', '')
     } else {
     document.querySelector('.task-container').appendChild(container_right)
     }
