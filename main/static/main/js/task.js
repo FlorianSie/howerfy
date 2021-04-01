@@ -660,6 +660,7 @@ function render_new_task(view) {
         document.querySelector('#title-text').setAttribute('oninput', 'enable_save_m()')
         document.querySelector('#date-text').setAttribute('oninput', 'enable_save_m()')
         document.querySelector('#task-description').setAttribute('oninput', 'enable_save_m()')
+        document.querySelector('#date-text').setAttribute('type', '')
     } else {
     document.querySelector('.task-container').appendChild(container_right)
     }
