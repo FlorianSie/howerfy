@@ -10,6 +10,7 @@ from rest_framework.renderers import JSONRenderer
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth import authenticate, login, logout
+from django.core.mail import send_mail
 
 from main.models import Task, User, Milestone, VisibilitySetting, Team, Rating, TaskSerializer, TaskSerializerFull, MilestoneSerializer, TeamSerializer, UserSerializer
 
@@ -47,6 +48,14 @@ def register_new(request):
     user.save()
 
     user = authenticate(request, username=username, password=password)
+
+    send_mail(
+        'Welcome to Howerfy!',
+        'Thanks for signing up',
+        'Flo@howerfy.com',
+        [eMail],
+        fail_silently=True,
+    )
 
     if user is not None:
         login(request, user)
