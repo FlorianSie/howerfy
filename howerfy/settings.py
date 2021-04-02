@@ -138,3 +138,10 @@ STATIC_ROOT = BASE_DIR / 'main' / 'static'  #. os.path.join(BASE_DIR, 'staticfil
 
 # The URL to use when referring to static files (where they will be served from)
 STATIC_URL = '/static/'
+
+# Email settings:
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'Howerfy@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASSWORD']
+EMAIL_USE_TLS = True
