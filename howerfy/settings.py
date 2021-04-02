@@ -144,5 +144,5 @@ STATIC_URL = '/static/'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'Howerfy@gmail.com'
-EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASSWORD', 'default']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASSWORD']
 EMAIL_USE_TLS = True
