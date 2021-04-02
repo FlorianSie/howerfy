@@ -236,3 +236,12 @@ function show_team_overview() {
         document.querySelector('#dropdown-view').style.display = 'none';
         document.querySelector('#team-overview').style.display = 'flex';
 }
+// Function to keep a nav icon activated after clicking on it (via additional class)
+function activate_nav_icon() {
+        event.target.classList.add('nav-active-icon')
+        other_icons = document.querySelectorAll(`.nav-icon:not(#${event.target.id})`)
+        console.log(other_icons)
+        other_icons.forEach(icon => {
+                icon.setAttribute('class', 'nav-icon')
+        });        
+}

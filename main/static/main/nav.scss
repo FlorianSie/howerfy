@@ -120,7 +120,25 @@ $white: rgb(255, 255, 255);
         border-color: $pink;
         background-color: $lightBlueOverlay;
     }
+    .nav-svg {
+        pointer-events: none;
+        position: relative;
+        top: 10px;
+        left: 10px;
+        fill: none;
+        stroke-width:5px;
+        stroke: $darkGrey;
+        stroke-width: 4;
+    }
 }
+
+.nav-active-icon {
+    border-bottom: 5px solid;
+    border-color: $pink;
+    background-color: $lightBlueOverlay;
+    outline: none;
+}
+
 .nav-svg {
     position: relative;
     top: 10px;

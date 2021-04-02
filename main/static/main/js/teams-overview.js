@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('#teams').onclick = () => {
+        activate_nav_icon();
         document.querySelector('#start').style.display = 'none'
         document.querySelector('#task').style.display = 'none';
         document.querySelector('#overlay').style.display = 'block';

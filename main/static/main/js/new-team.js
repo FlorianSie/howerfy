@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('#team').onclick = () => {
+        activate_nav_icon();
         // defined in main.js --> clears div if not null
         clear_view('#new-team');
         clear_view('#all-tasks');

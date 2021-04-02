@@ -1941,6 +1941,23 @@ ellipse:hover {
   border-color: #e36397;
   background-color: rgba(216, 228, 255, 0.322);
 }
+.nav-icon .nav-svg, .nav-icon .nav-svg-inactive {
+  pointer-events: none;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  fill: none;
+  stroke-width: 5px;
+  stroke: #161618;
+  stroke-width: 4;
+}
+
+.nav-active-icon {
+  border-bottom: 5px solid;
+  border-color: #e36397;
+  background-color: rgba(216, 228, 255, 0.322);
+  outline: none;
+}
 
 .nav-svg, .nav-svg-inactive {
   position: relative;

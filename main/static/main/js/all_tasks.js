@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         render_all_tasks('all-tasks');
         add_view_dropdown('all_tasks');
         dropdown('dropdown-item-1');
+        activate_nav_icon();
     }
     if (window.location.pathname != "/home") {
         document.querySelector('.nav-svg-tasks').addEventListener('mousemove', () => {
